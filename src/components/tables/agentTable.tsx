@@ -1,13 +1,4 @@
 import { FC } from "react";
-import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "components/ui/table";
 
 interface Props {
     table_id: string,
@@ -35,9 +26,13 @@ const Main: FC<Props> = ({
                     <div className="overflow-x-auto h-full">
                         <table className="w-full text-sm text-left text-gray-500  h-full ">
                             <thead className="text-xs text-gray-700 uppercase bg-gray-50 border-b-2 bg-[#30BCEE]">
+                              
                                 <tr>
+                                <th  scope="col" className="px-4 py-3 text-center ">
+                                            Agent
+                                </th>
                                     {
-                                        tableHead.map((col, index) =>
+                                        tableHead.slice(3,tableHead.length).map((col, index) =>
                                             <th key={table_id + "_head_" + index} scope="col" className="px-4 py-3 text-center">
                                                 {col}
                                             </th>
@@ -50,9 +45,12 @@ const Main: FC<Props> = ({
                                 {
                                     data.map((row, rowIndex) =>
                                         <tr key={table_id + "_row_" + rowIndex} className="border-b-2 ">
+                                            <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap flex items-center " >
+                                                <img src={row.agent_avatar} className="w-10 h-10 rounded-xl mr-2"/> <span>{row["Agt First Name"]} {row["Agt Last Name"]}</span>
+                                            </td>
                                             {
-                                                tableHead.map((cell, cellIndex) =>
-                                                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap text-center" key={table_id + "_cell_" + rowIndex + cellIndex}>{row[cell]}</td>
+                                                tableHead.slice(3,tableHead.length).map((cell, cellIndex) =>
+                                                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap text-center " key={table_id + "_cell_" + rowIndex + cellIndex}>{row[cell]}</td>
 
                                                 )
                                             }
