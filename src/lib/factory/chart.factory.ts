@@ -1,6 +1,6 @@
 import { IChartComponent } from "types/chart.types";
 import {
-    BarChart
+    BarChart as BarChartComponent
 } from "components/charts/elements";
 
 
@@ -19,7 +19,7 @@ class Chart {
 class BarChart extends Chart {
     constructor() {
         super();
-        this.chart = BarChart;
+        this.chart = BarChartComponent;
     }
 
 }
