@@ -21,13 +21,13 @@ export const BillBoard: React.FC<Props> = ({
     return (
         <Card className="border-2">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 text-black">
-                <CardTitle className="text-xl font-medium">
+                <CardTitle className="text-xl font-bold">
                    {title}
                 </CardTitle>
                 <Icon className="h-8 w-8 text-muted-foreground text-[#1f77b4]" />
             </CardHeader>
             <CardContent>
-                <div className="text-6xl font-bold text-black">{subtitle}</div>  
+                <div className="text-6xl font-bold text-[#1f77b4]">{subtitle}</div>  
             </CardContent>
         </Card>       
     ); 

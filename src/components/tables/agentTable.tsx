@@ -20,12 +20,12 @@ const Main: FC<Props> = ({
 
         <section className="relative h-full ">
 
-            <div className="relative mx-auto  min-h-full h-full overflow-auto max-h-full  ">
-                <div className="relative overflow-hidden bg-white   sm:rounded-md h-full border-2 ">
+                       <div className="relative mx-auto  min-h-full h-full overflow-auto max-h-full  ">
+                <div className="relative overflow-hidden bg-white  rounded-md h-full border-2 border-gray-300 ">
 
                     <div className="overflow-x-auto h-full">
-                        <table className="w-full text-sm text-left text-gray-500  h-full ">
-                            <thead className="text-xs text-gray-700 uppercase bg-gray-50 border-b-2 bg-[#1f77b4]">
+                        <table className="w-full text-sm text-left text-gray-500  h-full  border-2 ">
+                            <thead className="text-xs text-gray-700 bg-gray-200 uppercase bg-gray-50 shadow-4xl border-b-2 border-[#1f77b4]">
                               
                                 <tr>
                                 <th  scope="col" className="px-4 py-3 text-center ">
