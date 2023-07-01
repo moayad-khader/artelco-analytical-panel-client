@@ -38,14 +38,11 @@ export default function Dashboard() {
             <div className="col-span-5  grid grid-rows-5 gap-0">
                 <div className=" h-full ">
                     <div className="grid grid-cols-2 gap-1 p-2 h-full">
-
                         <Billboard
                             title="Waiting"
                             icon={Clock}
                             subtitle="1"
                         />
-
-
                         <Billboard
                             title="Incoming Calls"
                             icon={PhoneCall}
