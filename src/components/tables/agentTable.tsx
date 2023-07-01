@@ -25,7 +25,7 @@ const Main: FC<Props> = ({
 
                     <div className="overflow-x-auto h-full">
                         <table className="w-full text-sm text-left text-gray-500  h-full ">
-                            <thead className="text-xs text-gray-700 uppercase bg-gray-50 border-b-2 bg-[#30BCEE]">
+                            <thead className="text-xs text-gray-700 uppercase bg-gray-50 border-b-2 bg-[#1f77b4]">
                               
                                 <tr>
                                 <th  scope="col" className="px-4 py-3 text-center ">

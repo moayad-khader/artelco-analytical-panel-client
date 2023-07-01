@@ -47,7 +47,7 @@ export default function Dashboard() {
 
 
                         <Billboard
-                            title="Icoming Calls"
+                            title="Incoming Calls"
                             icon={PhoneCall}
                             subtitle="2"
                         />

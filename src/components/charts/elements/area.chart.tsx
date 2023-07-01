@@ -7,7 +7,7 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 interface Props {
     details: any
 }
-
+const colors = ['#1f77b4'];
 const AreaChart: FC<Props>  = ({ details }) => {
     const { xLabels, series } = useMemo(() => {
         return apexchartsDataFormConverter(details, "skillset")
@@ -24,6 +24,7 @@ const AreaChart: FC<Props>  = ({ details }) => {
           },
           offsetY: 3,
         },
+        colors,
         stroke: {
           curve: "smooth",
           width: 2,
@@ -34,7 +35,7 @@ const AreaChart: FC<Props>  = ({ details }) => {
         xaxis: {
           categories: xLabels,
         },
-        colors: ["#9F6FFC"],
+
         tooltip: {
           enabled: true,
           theme: "dark",
