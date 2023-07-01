@@ -2,6 +2,7 @@
 import { FC , useMemo } from "react";
 import dynamic from "next/dynamic";
 import { apexchartsDataFormConverter } from "lib/utils";
+import { useTheme } from "next-themes";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 interface Props {
@@ -12,6 +13,8 @@ const AreaChart: FC<Props>  = ({ details }) => {
     const { xLabels, series } = useMemo(() => {
         return apexchartsDataFormConverter(details, "skillset")
     },[]);
+
+    const { setTheme, theme } = useTheme()
 
   return (
     <Chart
@@ -35,7 +38,9 @@ const AreaChart: FC<Props>  = ({ details }) => {
         xaxis: {
           categories: xLabels,
         },
-
+         theme: {
+          mode: theme === "dark"? "dark":"light",
+        },
         tooltip: {
           enabled: true,
           theme: "dark",

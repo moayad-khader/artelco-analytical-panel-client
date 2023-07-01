@@ -3,7 +3,7 @@
 import { FC, memo , useMemo } from "react";
 import dynamic from "next/dynamic";
 import { apexchartsDataFormConverter } from "lib/utils";
-
+import { useTheme } from "next-themes";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 interface BarChartProps {
@@ -16,7 +16,7 @@ const BarChart: FC<BarChartProps> = ({ details }) => {
     const { xLabels, series } = useMemo(() => {
         return apexchartsDataFormConverter(details, "label")
     },[]);
-
+    const { setTheme, theme } = useTheme()
     return (
         <Chart
             options={{
@@ -71,6 +71,9 @@ const BarChart: FC<BarChartProps> = ({ details }) => {
                         fontSize: "14px",
                         fontFamily: "Source Sans",
                     },
+                },
+                theme: {
+                    mode: theme === "dark"? "dark":"light",
                 },
                 tooltip: {
                     theme: "dark"

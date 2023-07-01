@@ -9,16 +9,16 @@ import agents from "_mock/agent";
 import bar1 from "_mock/bar1";
 
 
+
 export default function Dashboard() {
 
+    
 
     return (
-        <div className="w-full h-max-screen h-min-screen h-screen bg-white grid grid-rows-1 grid-cols-12 grid-flow-col gap-0">
-            <div className="col-span-7  grid grid-rows-2 gap-0">
-                <div className="h-full w-full  p-2">
-                    <div className="grid grid-cols-2 gap-2">
-
-                    </div>
+        <div className="w-full h-max-screen h-min-screen h-screen dark:bg-black bg-white grid grid-rows-1 grid-cols-12 grid-flow-col gap-1 p-2">
+            <div className="col-span-7  grid grid-rows-2 gap-2">
+                <div className="h-full w-full ">
+                  
                     <MainTable
                         caption="CCMS Standard Skillset Display *"
                         tableHead={Object.keys(skillset[0])}
@@ -26,7 +26,7 @@ export default function Dashboard() {
                         table_id="skillset_table"
                     />
                 </div>
-                <div className=" p-2">
+                <div className=" ">
                     <AgentTable
                         caption=""
                         tableHead={Object.keys(agents[0])}
@@ -35,9 +35,9 @@ export default function Dashboard() {
                     />
                 </div>
             </div>
-            <div className="col-span-5  grid grid-rows-5 gap-0">
+            <div className="col-span-5  grid grid-rows-5 gap-1">
                 <div className=" h-full ">
-                    <div className="grid grid-cols-2 gap-1 p-2 h-full">
+                    <div className="grid grid-cols-2 gap-1  h-full">
                         <Billboard
                             title="Waiting"
                             icon={Clock}
@@ -50,18 +50,14 @@ export default function Dashboard() {
                         />
                     </div>
                 </div>
-                <div className="row-span-2 p-2">
-
+                <div className="row-span-2 ">
                     <Chart
                         chart_type="bar"
                         title="test1"
                         details={bar1}
                     />
-
-
                 </div>
-                <div className="row-span-2 p-2">
-
+                <div className="row-span-2">
                     <Chart
                         chart_type="area"
                         title="test1"
@@ -72,8 +68,6 @@ export default function Dashboard() {
                             }
                         })}
                     />
-
-
                 </div>
             </div>
         </div>
