@@ -1,5 +1,7 @@
 import { FC } from "react";
 
-interface IChartProps{}
+interface IChartProps{
+    details
+}
 
 export type IChartComponent =  FC<IChartProps>;
