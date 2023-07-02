@@ -53,6 +53,7 @@ import {
     VolumeX,
     Wallet,
     X,
+    HomeIcon,
     type Icon as LucideIcon,
     type LucideProps,
   } from "lucide-react"
@@ -60,6 +61,7 @@ import {
   export type Icon = LucideIcon
   
   export const Icons = {
+    home: HomeIcon,
     sun: SunMedium,
     moon: Moon,
     twitter: Twitter,
