@@ -73,7 +73,7 @@ export function SignInForm() {
             </FormItem>
           )}
         />
-        <Button disabled={isPending} className="bg-[#1f77b4] text-white hover:bg-[#1f77b0]">
+        <Button disabled={isPending} className="bg-primary text-white ">
           {isPending && (
             <Icons.spinner
               className="mr-2 h-4 w-4 animate-spin"

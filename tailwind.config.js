@@ -3,6 +3,20 @@ module.exports = {
   darkMode: ["class"],
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    backgroundColor: (theme) => ({
+      ...theme("colors"),
+      hover: "#009fc2",
+      primary: "#1f77b4",
+      secondary: "white",
+      sidebar: "#F0F0F0",
+      "background-primary-dark": "#1C1C21",
+      "background-secondary-dark": "#424242",
+      "background-third-dark": "#31363F",
+      "background-primary-light": "#3BA2A7",
+      "background-secondary-light": "#FAF9F6",
+      "background-third-light": "#fff",
+  
+    }),
     container: {
       center: true,
       padding: "2rem",

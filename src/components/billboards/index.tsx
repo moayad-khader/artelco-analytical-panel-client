@@ -19,7 +19,7 @@ export const BillBoard: React.FC<Props> = ({
     icon: Icon,
 }) => {
     return (
-        <Card className=" dark:border-gray-800 border-2 dark:bg-[#424242]">
+        <Card className=" dark:border-gray-800 border-2 dark:bg-background-secondary-dark">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 text-black">
                 <CardTitle className="text-xl font-bold dark:text-white ">
                    {title}
