@@ -12,13 +12,10 @@ import bar1 from "_mock/bar1";
 
 export default function Dashboard() {
 
-    
-
     return (
         <div className="w-full h-max-screen h-min-screen h-screen dark:bg-background-primary-dark bg-white grid grid-rows-1 grid-cols-12 grid-flow-col gap-1 p-2">
             <div className="col-span-7  grid grid-rows-2 gap-2">
                 <div className="h-full w-full ">
-                  
                     <MainTable
                         caption="CCMS Standard Skillset Display *"
                         tableHead={Object.keys(skillset[0])}

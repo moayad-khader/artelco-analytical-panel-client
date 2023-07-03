@@ -19,15 +19,15 @@ export const BillBoard: React.FC<Props> = ({
     icon: Icon,
 }) => {
     return (
-        <Card className=" dark:border-gray-800 border-2 dark:bg-background-secondary-dark">
+        <Card className=" dark:border-dark border-2 dark:bg-background-secondary-dark border-light">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 text-black">
                 <CardTitle className="text-xl font-bold dark:text-white ">
                    {title}
                 </CardTitle>
-                <Icon className="h-8 w-8 text-muted-foreground text-[#1f77b4]" />
+                <Icon className="h-8 w-8 text-muted-foreground text-primary" />
             </CardHeader>
             <CardContent>
-                <div className="text-6xl font-bold text-[#1f77b4]">{subtitle}</div>  
+                <div className="text-6xl font-bold text-primary">{subtitle}</div>  
             </CardContent>
         </Card>       
     ); 

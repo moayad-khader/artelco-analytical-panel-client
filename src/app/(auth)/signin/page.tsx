@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function SignInPage() {
   return (
     <Shell layout="auth">
-      <Card className="border-2 border-[#1f77b0]  dark:bg-background-secondary-dark">
+      <Card className="border-2 border-primary  dark:bg-background-secondary-dark">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl text-black dark:text-white">Sign in</CardTitle>
         </CardHeader>

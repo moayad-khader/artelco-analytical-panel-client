@@ -12,10 +12,20 @@ module.exports = {
       "background-primary-dark": "#1C1C21",
       "background-secondary-dark": "#424242",
       "background-third-dark": "#31363F",
-      "background-primary-light": "#3BA2A7",
+      "background-primary-light": "white",
       "background-secondary-light": "#FAF9F6",
       "background-third-light": "#fff",
-  
+    }),
+    borderColor: (theme) => ({
+      ...theme("colors"),
+      primary: "#1f77b0",
+      dark: "#545353",
+      light: "#e5e0e0"
+    }),
+    textColor: (theme) => ({
+      ...theme("colors"),
+      primary: "#1f77b0",
+     
     }),
     container: {
       center: true,
