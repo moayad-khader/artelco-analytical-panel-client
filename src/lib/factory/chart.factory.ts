@@ -9,9 +9,7 @@ class Chart {
 
     chart: IChartComponent;
 
-    constructor() {
-        console.log("ss")
-    }
+    constructor() {}
 
     getChart():IChartComponent{
         return this.chart;
