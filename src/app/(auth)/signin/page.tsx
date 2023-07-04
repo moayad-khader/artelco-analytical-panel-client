@@ -1,6 +1,6 @@
 import { type Metadata } from "next"
 import Link from "next/link"
-
+import "app/globals.css";
 import {
   Card,
   CardContent,
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 }
 
 export default function SignInPage() {
+  console.log("ss")
   return (
     <Shell layout="auth">
       <Card className="border-2 border-primary  dark:bg-background-secondary-dark">

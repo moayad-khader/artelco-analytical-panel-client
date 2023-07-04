@@ -1,9 +1,16 @@
-import Image from 'next/image'
+
+// import Image from 'next/image'
+import "app/globals.css";
+import SideBar from "components/sidebars/main.sidebar";
+import React from 'react';
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-  
-    </main>
-  )
+    console.log("ss")
+    return (
+        <React.Fragment>
+    
+            <SideBar/>
+
+        </React.Fragment>
+    )
 }

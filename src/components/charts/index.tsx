@@ -25,15 +25,7 @@ const Chart: FC<Props> = ({
             ).getChart(),
         [chart_type]
     );
-    const { setTheme, theme } = useTheme()
 
-    useEffect(() => {
-        const queryString = window.location.search;
-        const searchParams = new URLSearchParams(queryString);
-        const value = searchParams.get('theme');
-        setTheme(value || "dark");
-    },[]);
-    
    
     return (
         <div
