@@ -22,7 +22,7 @@ const  Sidebar:FC<Props> = ({
 
   return (
     <aside className={cn(
-      "w-60 fixed transition transform ease-in-out duration-1000 z-50 flex h-screen bg-background-primary-dark dark:bg-background-primary-dark ",
+      "w-60 fixed transition transform ease-in-out duration-1000 z-50 flex h-screen bg-background-primary-dark dark:bg-background-primary-dark",
       isExpanded ? " -translate-x-none" : " -translate-x-48"
     )} >
 
@@ -79,12 +79,23 @@ const  Sidebar:FC<Props> = ({
           </div>
         </div>
         <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
-          <Icons.chart />
+          <Icons.pie />
           <div>
             Dashboards
           </div>
         </div>
-
+        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
+          <Icons.chart />
+          <div>
+            Reports
+          </div>
+        </div>
+        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
+          <Icons.billing />
+          <div>
+            Billing
+          </div>
+        </div>
       </div>
       <div className={cn(
         "mini mt-20  flex-col space-y-2 w-full h-[calc(100vh)]",
@@ -96,12 +107,18 @@ const  Sidebar:FC<Props> = ({
           />
         </div>
         <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex">
+          <Icons.pie
+            size={20} />
+        </div>
+        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex">
           <Icons.chart
             size={20} />
         </div>
-
+        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex">
+          <Icons.billing
+            size={20} />
+        </div>
       </div>
-
     </aside>
   )
 }

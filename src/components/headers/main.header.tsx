@@ -11,10 +11,10 @@ const Header:FC<Props> = ({
 
 
   return (
-    <div className = "fixed w-full z-30 flex bg-black border-b-2 border-primary p-2 items-center justify-center h-16 px-10">
+    <div className = "fixed w-full z-30 flex bg-white dark:bg-black border-b-2 border-gray-700 p-2 items-center justify-center h-16 px-10">
         {
             isExpanded ? null :
-            <div className = " ml-12 dark:text-white  transform ease-in-out duration-500 flex-none h-full flex items-center justify-center">
+            <div className = " ml-12 text-black dark:text-white  transform ease-in-out duration-500 flex-none h-full flex items-center justify-center">
             ARTELCO
         </div>
 
@@ -30,7 +30,7 @@ const Header:FC<Props> = ({
                     </div>
                     </div>
 
-                    <div className = "hidden md:block text-sm md:text-md text-black dark:text-white">John Doe</div>
+
                 </div>
                 
         </div>
