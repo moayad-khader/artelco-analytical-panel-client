@@ -16,10 +16,10 @@ import { SidebarProps } from "types/sidebar.types";
 
 import { Icons } from "components/icons";
 
-export function Sidebar({ className, menus }: SidebarProps) {
+export default function Sidebar({ className, menus }: SidebarProps) {
   const pathname = usePathname()
   return (
-    <div className={cn("pb-12", className)}>
+    <div className={cn("pb-12 bg-background-primary-dark", className)}>
       <div className="space-y-4 pb-2">
         <div className="py-2">
           <ScrollArea className="min-h-[300px] max-h-screen px-2">
