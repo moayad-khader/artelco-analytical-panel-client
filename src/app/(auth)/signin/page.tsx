@@ -22,7 +22,7 @@ export default function SignInPage() {
   console.log("ss")
   return (
     <Shell layout="auth">
-      <Card className="border-2 border-primary  dark:bg-background-secondary-dark">
+      <Card className="border-2 border-primary  dark:bg-background-primary-dark">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl text-black dark:text-white">Sign in</CardTitle>
         </CardHeader>

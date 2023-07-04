@@ -1,29 +1,33 @@
 "use client"
-import { useState, useCallback } from 'react';
+import { useCallback, FC } from 'react';
 import { cn } from 'lib/utils';
 import { Icons } from "components/icons";
 import { useTheme } from "next-themes";
 
-export default function Sidebar({
-  view,
-  setView
-}) {
+interface Props {
+  isExpanded: boolean;
+  toggleSideBar: () => void;
+}
+const  Sidebar:FC<Props> = ({
+  isExpanded,
+  toggleSideBar
+}) => {
 
-  const [isExpanded, setIsExpanded] = useState(false);
+
   const { setTheme, theme } = useTheme()
 
-  const toggleSideBar = useCallback(() => setIsExpanded(prev => !prev), [setIsExpanded]);
+  
 
   const toggleTheme = useCallback(() => setTheme(theme === "dark" ? "light" : "dark"), [theme, setTheme]);
 
   return (
     <aside className={cn(
-      "w-60 fixed transition transform ease-in-out duration-1000 z-50 flex h-screen bg-primary dark:bg-primary ",
+      "w-60 fixed transition transform ease-in-out duration-1000 z-50 flex h-screen bg-background-primary-dark dark:bg-background-primary-dark ",
       isExpanded ? " -translate-x-none" : " -translate-x-48"
     )} >
 
       <div className={cn(
-        "max-toolbar  w-full -right-6 transition transform ease-in duration-300 flex items-center justify-between border-4 border-white dark:border-[#0F172A] bg-primary dark:bg-primary  absolute top-2 rounded-full h-12",
+        "max-toolbar  w-full -right-6 transition transform ease-in duration-300 flex items-center justify-between border-4 border-black bg-background-primary-dark dark:bg-background-primary-dark  absolute top-2 rounded-full h-12",
         isExpanded ? "translate-x-0" : "translate-x-24 scale-x-0"
       )} >
 
@@ -59,7 +63,7 @@ export default function Sidebar({
           </div>
         </div>
       </div>
-      <div onClick={toggleSideBar} className="-right-6 transition transform ease-in-out duration-500 flex border-4 border-white dark:border-[#0F172A] cursor-pointer bg-primary dark:hover:bg-blue-500 hover:bg-purple-500 absolute top-2 p-3 rounded-full text-white hover:rotate-45">
+      <div onClick={toggleSideBar} className="-right-6 transition transform ease-in-out duration-500 flex border-4 border-black cursor-pointer bg-background-primary-dark dark:hover:bg-blue-500 hover:bg-purple-500 absolute top-2 p-3 rounded-full text-white hover:rotate-45">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-4 h-4">
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
         </svg>
@@ -68,13 +72,13 @@ export default function Sidebar({
         "max  text-white mt-20 flex-col space-y-2 w-full h-[calc(100vh)]",
         isExpanded ? "flex" : "hidden"
       )} >
-        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-primary p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
+        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
           <Icons.home />
           <div>
             Home
           </div>
         </div>
-        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-primary p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
+        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
           <Icons.chart />
           <div>
             Dashboards
@@ -86,12 +90,12 @@ export default function Sidebar({
         "mini mt-20  flex-col space-y-2 w-full h-[calc(100vh)]",
         isExpanded ? "hidden" : "flex"
       )}>
-        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-primary p-3 rounded-full transform ease-in-out duration-300 flex">
+        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex">
           <Icons.home
             size={20}
           />
         </div>
-        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-primary p-3 rounded-full transform ease-in-out duration-300 flex">
+        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex">
           <Icons.chart
             size={20} />
         </div>
@@ -101,3 +105,6 @@ export default function Sidebar({
     </aside>
   )
 }
+
+
+export default Sidebar;
