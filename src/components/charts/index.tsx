@@ -1,7 +1,7 @@
 "use client";
 import { FC, useEffect, useMemo } from "react";
 import { cn } from "lib/utils";
-import { IChartComponent } from "types/chart.types";
+import { IChartComponent } from "lib/types/chart.types";
 import { ChartFactory } from "lib/factory";
 import { useTheme } from "next-themes";
 interface Props {

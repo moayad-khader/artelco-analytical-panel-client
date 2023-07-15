@@ -1,5 +1,5 @@
 import HomeView from "views/home";
-import { IViewComponent } from "types/view.types";
+import { IViewComponent } from "lib/types/view.types";
 
 
 class View {

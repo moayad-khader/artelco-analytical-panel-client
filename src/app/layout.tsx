@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 
+import type { Metadata } from "next";
 import { siteConfig } from "config/site";
 import { fontMono, fontSans } from "lib/fonts";
 import { cn } from "lib/utils";

@@ -1,4 +1,4 @@
-import { NavItems } from "types/sidebar.types";
+import { NavItems } from "lib/types/sidebar.types";
 import { Icons } from "components/icons";
 
 export const sideMenu: NavItems[] = [

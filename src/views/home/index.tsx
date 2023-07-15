@@ -4,12 +4,9 @@ import {
     Icons
 } from "components/icons";
 import { Button } from "components/ui/button";
+import { IViewComponent } from "lib/types/view.types";
 
-interface Props {
-
-}
-
-const Home: FC<Props> = ({
+const Home: IViewComponent = ({
 
 }) => {
 
