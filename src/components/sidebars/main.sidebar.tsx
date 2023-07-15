@@ -35,7 +35,7 @@ const  Sidebar:FC<Props> = ({
           <div>
 
             <div onClick={toggleTheme} className={cn(
-              "moon text-white hover:text-white dark:hover:text-white",
+              "moon text-white hover:text-white dark:hover:text-white cursor-pointer",
               theme === "dark" ? "block" : "hidden"
             )}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-4 h-4">
@@ -43,7 +43,7 @@ const  Sidebar:FC<Props> = ({
               </svg>
             </div>
             <div onClick={toggleTheme} className={cn(
-              "moon text-white hover:text-white dark:hover:text-white",
+              "moon text-white hover:text-white dark:hover:text-white cursor-pointer",
               theme === "dark" ? "hidden" : "block"
             )}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4">
@@ -51,7 +51,7 @@ const  Sidebar:FC<Props> = ({
               </svg>
             </div>
           </div >
-          <div className="text-white hover:text-white dark:hover:text-white">
+          <div className="text-white hover:text-white dark:hover:text-white cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
             </svg>
@@ -72,25 +72,25 @@ const  Sidebar:FC<Props> = ({
         "max  text-white mt-20 flex-col space-y-2 w-full h-[calc(100vh)]",
         isExpanded ? "flex" : "hidden"
       )} >
-        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
+        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3 cursor-pointer">
           <Icons.home />
           <div>
             Home
           </div>
         </div>
-        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
+        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3 cursor-pointer">
           <Icons.pie />
           <div>
             Dashboards
           </div>
         </div>
-        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
+        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3 cursor-pointer">
           <Icons.chart />
           <div>
             Reports
           </div>
         </div>
-        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3">
+        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3 cursor-pointer">
           <Icons.billing />
           <div>
             Billing
@@ -101,20 +101,20 @@ const  Sidebar:FC<Props> = ({
         "mini mt-20  flex-col space-y-2 w-full h-[calc(100vh)]",
         isExpanded ? "hidden" : "flex"
       )}>
-        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex">
+        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex cursor-pointer">
           <Icons.home
             size={20}
           />
         </div>
-        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex">
+        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex cursor-pointer">
           <Icons.pie
             size={20} />
         </div>
-        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex">
+        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex cursor-pointer">
           <Icons.chart
             size={20} />
         </div>
-        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex">
+        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex cursor-pointer">
           <Icons.billing
             size={20} />
         </div>
