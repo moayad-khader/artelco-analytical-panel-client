@@ -16,7 +16,7 @@ import { Button } from "components/ui/button";
 export default function Home() {
 
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
-    const [view, setView] = useState<string>("home");
+    const [view, setView] = useState<string>("settings");
 
     const toggleSideBar = useCallback(() => setIsExpanded(prev => !prev), [setIsExpanded]);
 

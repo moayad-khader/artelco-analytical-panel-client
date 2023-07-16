@@ -35,7 +35,7 @@ class ViewFactory {
         switch (view) {
             case "home":
                 return new Home();
-            case "profile":
+            case "settings":
                 return new Settings();
         }
     }

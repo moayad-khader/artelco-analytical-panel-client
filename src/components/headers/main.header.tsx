@@ -66,23 +66,14 @@ const Header: FC<Props> = ({
                                     className='hover:dark:bg-gray-900 cursor-pointer'
                                     onClick={() => setView("profile")}
                                 >
-                                    <Icons.user
+                                    <Icons.settings
                                         className="mr-2 h-4 w-4"
                                     />
 
-                                    <span>Profile</span>
+                                    <span>Settings</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem
-                                    className='hover:dark:bg-gray-900 cursor-pointer'
-                                    onClick={() => setView("team")}
-                                >
-                                    <Icons.users
-                                        className="mr-2 h-4 w-4"
-                                    />
-
-                                    <span>Team</span>
-                                </DropdownMenuItem>
-                                <DropdownMenuSeparator className='dark:bg-gray-700' />
+                             
+                             
                                 <DropdownMenuItem className='hover:dark:bg-gray-900 cursor-pointer'>
                                     <Icons.logout
                                         className="mr-2 h-4 w-4"
