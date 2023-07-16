@@ -1,8 +1,8 @@
 import { Separator } from "components/ui/sperator";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { SidebarNav } from "components/sidebars/settings.sidebar";
 import { IViewComponent } from "lib/types/view.types";
-import ProfileSettings from "views/settings/subViews/profile";
+import ViewFactory from "lib/factory/view.factory";
 
 const sidebarNavItems = [
     {
@@ -16,7 +16,10 @@ const sidebarNavItems = [
 ]
 const Settings:IViewComponent = ({  }) => {
 
-    const [view, setView] = useState("proflie")
+    const [view, setView] = useState("organization");
+
+
+    const View = useMemo(() =>  ViewFactory.createView(view).getView(),[view]);
     return (
         <>
 
@@ -33,9 +36,10 @@ const Settings:IViewComponent = ({  }) => {
                         <SidebarNav items={sidebarNavItems} />
                     </aside>
                     <div className="flex-1 lg:w-3/5">
-                        <ProfileSettings
-                            
-                        />
+                       <View
+                            setView={setView}
+                            view={view}
+                       />
                     </div>
                 </div>
             </div>

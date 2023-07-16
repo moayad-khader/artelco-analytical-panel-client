@@ -30,11 +30,7 @@ import { ProfileFormValues, profileFormSchema } from "lib/validations/profile";
 
 
 const defaultValues: Partial<ProfileFormValues> = {
-  bio: "I own a computer.",
-  urls: [
-    { value: "https://shadcn.com" },
-    { value: "http://twitter.com/shadcn" },
-  ],
+
 }
 
 export function ProfileForm() {
@@ -42,11 +38,6 @@ export function ProfileForm() {
     resolver: zodResolver(profileFormSchema),
     defaultValues,
     mode: "onChange",
-  })
-
-  const { fields, append } = useFieldArray({
-    name: "urls",
-    control: form.control,
   })
 
   function onSubmit(data: ProfileFormValues) {
@@ -63,6 +54,27 @@ export function ProfileForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <FormField
+          control={form.control}
+          name="username"
+          render={({ field }) => (
+            <FormItem>
+          
+              <FormControl>
+                <div className="mx-auto w-64 text-center ">
+                  <div className="relative w-64">
+                    <img className="w-64 h-64 rounded-full " src="https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+                    <div className="w-64 h-64 group hover:bg-gray-200 opacity-60 rounded-full absolute flex justify-center items-center cursor-pointer transition duration-500 top-0">
+                      <img className="hidden group-hover:block w-12" src="https://www.svgrepo.com/show/33565/upload.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </FormControl>
+           
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name="username"
@@ -79,7 +91,8 @@ export function ProfileForm() {
               <FormMessage />
             </FormItem>
           )}
-        />   
+        />
+       
         <Button type="submit">Update profile</Button>
       </form>
     </Form>
