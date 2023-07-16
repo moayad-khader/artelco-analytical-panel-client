@@ -49,7 +49,7 @@ const  Sidebar:FC<Props> = ({
               theme === "dark" ? "hidden" : "block"
             )}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                <path strokeLinecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
               </svg>
             </div>
           </div >
@@ -98,6 +98,12 @@ const  Sidebar:FC<Props> = ({
             Billing
           </div>
         </div>
+        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3 cursor-pointer">
+          <Icons.settings />
+          <div>
+            Settings
+          </div>
+        </div>
       </div>
       <div className={cn(
         "mini mt-20  flex-col space-y-2 w-full h-[calc(100vh)]",
@@ -118,6 +124,10 @@ const  Sidebar:FC<Props> = ({
         </div>
         <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex cursor-pointer">
           <Icons.billing
+            size={20} />
+        </div>
+        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex cursor-pointer">
+          <Icons.settings
             size={20} />
         </div>
       </div>

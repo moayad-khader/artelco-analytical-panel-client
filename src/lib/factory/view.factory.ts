@@ -1,5 +1,5 @@
 import HomeView from "views/home";
-import ProfileView from "views/profile";
+import SettingsView from "views/settings";
 import { IViewComponent } from "lib/types/view.types";
 
 
@@ -23,10 +23,10 @@ class Home extends View {
 
 }
 
-class Profile extends View {
+class Settings extends View {
     constructor() {
         super();
-        this.view = ProfileView;
+        this.view = SettingsView;
     }
 }
 
@@ -36,7 +36,7 @@ class ViewFactory {
             case "home":
                 return new Home();
             case "profile":
-                return new Profile();
+                return new Settings();
         }
     }
 }

@@ -2,9 +2,8 @@ import { ProfileForm } from "components/forms/profile.form";
 import { IViewComponent } from "lib/types/view.types";
 import { Separator } from "components/ui/sperator";
 
-const Profile: IViewComponent = ({
-    view,
-    setView
+const Profile = ({
+   
 }) => {
 
     return (
