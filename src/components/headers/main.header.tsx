@@ -10,30 +10,19 @@ import {
 
 } from "components/ui/dropdownMenu";
 import {
-    Cloud,
-    CreditCard,
-    Github,
-    Keyboard,
-    LifeBuoy,
-    LogOut,
-    Mail,
-    MessageSquare,
-    Plus,
-    PlusCircle,
-    Settings,
-    User,
-    UserPlus,
-    Users,
-} from "lucide-react";
+    Icons
+} from "components/icons";
+
 
 
 interface Props {
-    isExpanded: boolean
+    isExpanded: boolean,
+    setView: (a: string) => void;
 }
 const Header: FC<Props> = ({
-    isExpanded
+    isExpanded,
+    setView
 }) => {
-
 
     return (
         <div className="fixed w-full z-30 flex bg-white dark:bg-black border-b-2 border-gray-700 p-2 items-center justify-center h-16 px-10">
@@ -73,17 +62,32 @@ const Header: FC<Props> = ({
                                     </div>
                                 </DropdownMenuLabel>
                                 <DropdownMenuSeparator className='dark:bg-gray-700' />
-                                <DropdownMenuItem className='hover:dark:bg-gray-900 cursor-pointer'>
-                                    <User className="mr-2 h-4 w-4" />
+                                <DropdownMenuItem
+                                    className='hover:dark:bg-gray-900 cursor-pointer'
+                                    onClick={() => setView("profile")}
+                                >
+                                    <Icons.user
+                                        className="mr-2 h-4 w-4"
+                                    />
+
                                     <span>Profile</span>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem className='hover:dark:bg-gray-900 cursor-pointer'>
-                                    <Users className="mr-2 h-4 w-4" />
+                                <DropdownMenuItem
+                                    className='hover:dark:bg-gray-900 cursor-pointer'
+                                    onClick={() => setView("team")}
+                                >
+                                    <Icons.users
+                                        className="mr-2 h-4 w-4"
+                                    />
+
                                     <span>Team</span>
                                 </DropdownMenuItem>
                                 <DropdownMenuSeparator className='dark:bg-gray-700' />
                                 <DropdownMenuItem className='hover:dark:bg-gray-900 cursor-pointer'>
-                                    <LogOut className="mr-2 h-4 w-4" />
+                                    <Icons.logout
+                                        className="mr-2 h-4 w-4"
+                                    />
+
                                     <span>Log out</span>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>

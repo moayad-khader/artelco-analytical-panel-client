@@ -19,7 +19,7 @@ const Home: IViewComponent = ({
                     </h1>
                     <p className="capitalize">Start your journey here!</p>
                 </div>
-                <Button variant="outline">
+                <Button variant="outline" className="rounded-none">
                     <Icons.message className="mr-2 h-4 w-4" />
                     Leave Your Feedback
                 </Button>

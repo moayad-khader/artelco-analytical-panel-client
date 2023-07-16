@@ -26,13 +26,15 @@ export default function Home() {
         <div className="w-full h-max-screen h-min-screen h-screen dark:bg-black bg-white ">
             <Header
                 isExpanded={isExpanded}
+                setView={setView}
             />
             <SideBar
                 isExpanded={isExpanded}
                 toggleSideBar={toggleSideBar}
+                setView = {setView}
             />
             <div className={cn(
-                " content transform ease-in-out duration-500 pt-20 px-2 md:px-5 pb-4",
+                " content transform ease-in-out duration-500 pt-20 px-8 md:px-8 pb-4",
                 isExpanded ? "ml-12 md:ml-60" : "ml-12"
             )} >
               <View

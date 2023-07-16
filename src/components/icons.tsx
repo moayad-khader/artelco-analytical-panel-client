@@ -55,6 +55,7 @@ import {
     Wallet,
     X,
     HomeIcon,
+    Users,
     type Icon as LucideIcon,
     type LucideProps,
   } from "lucide-react"
@@ -74,6 +75,7 @@ import {
     chevronsRight: ChevronsRight,
     chevronUp: ChevronUp,
     chevronDown: ChevronDown,
+    users: Users,
     chevronUpDown: ChevronsUpDown,
     menu: Menu,
     verticalThreeDots: MoreVertical,
