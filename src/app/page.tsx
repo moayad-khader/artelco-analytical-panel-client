@@ -6,17 +6,13 @@ import ViewFactory from "lib/factory/view.factory";
 import SideBar from "components/sidebars/main.sidebar";
 import Header from "components/headers/main.header";
 import { cn } from "lib/utils";
-import ModuleCard from "components/cards/module.card";
-import {
-    Icons
-} from "components/icons";
 import { useState, useCallback } from 'react';
-import { Button } from "components/ui/button";
+
 
 export default function Home() {
 
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
-    const [view, setView] = useState<string>("settings");
+    const [view, setView] = useState<string>("home");
 
     const toggleSideBar = useCallback(() => setIsExpanded(prev => !prev), [setIsExpanded]);
 
@@ -32,6 +28,7 @@ export default function Home() {
                 isExpanded={isExpanded}
                 toggleSideBar={toggleSideBar}
                 setView = {setView}
+                view={view}
             />
             <div className={cn(
                 " content transform ease-in-out duration-500 pt-20 px-8 md:px-8 pb-4",

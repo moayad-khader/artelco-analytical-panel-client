@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, FC, Fragment } from "react";
+import { useCallback, FC, Fragment, useMemo } from "react";
 import { cn } from "lib/utils";
 import { Icons, Icon as IconType } from "components/icons";
 import { useTheme } from "next-themes";
@@ -8,6 +8,7 @@ interface Props {
   isExpanded: boolean;
   toggleSideBar: () => void;
   setView: (a: string) => void;
+  view: string;
 }
 
 interface NavProps {
@@ -16,6 +17,7 @@ interface NavProps {
   Icon: IconType;
   view: string;
   setView: (a: string) => void;
+  targetView: string;
 }
 const NavButton: FC<NavProps> = ({
   isExpanded,
@@ -23,25 +25,43 @@ const NavButton: FC<NavProps> = ({
   Icon,
   view,
   setView,
+  targetView
 }) => {
-  console.log("title", Icon);
+  
+  const color = useMemo(() => view === targetView ? "#1f77b4" : "#fff",[view]);
+
+  
+
   return (
     <Fragment>
       {isExpanded ? (
-        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3 cursor-pointer">
-          <Icon />
-          <div>{title}</div>
+        <div 
+          onClick={() =>setView(targetView)}
+          className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3 cursor-pointer"
+        >
+          <Icon 
+            color={color} 
+            className="transition transform ease-in-out duration-500"
+          />
+          <span className={`${color === "#1f77b4" ? "text-primary":""}`}>{title}</span>
         </div>
       ) : (
-        <div className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex cursor-pointer">
-          <Icon size={20} />
+        <div 
+          onClick={() =>setView(targetView)}
+          className="hover:ml-4 justify-end pr-3 text-white hover:text-white dark:hover:text-white w-full bg-background-primary-dark p-3 rounded-full transform ease-in-out duration-300 flex cursor-pointer"
+        >
+          <Icon 
+            size={20} 
+            color={color}
+            className="transition transform ease-in-out duration-500" 
+          />
         </div>
       )}
     </Fragment>
   );
 };
 
-const Sidebar: FC<Props> = ({ isExpanded, toggleSideBar, setView }) => {
+const Sidebar: FC<Props> = ({ isExpanded, toggleSideBar, setView, view }) => {
   const { setTheme, theme } = useTheme();
 
   const toggleTheme = useCallback(
@@ -157,26 +177,47 @@ const Sidebar: FC<Props> = ({ isExpanded, toggleSideBar, setView }) => {
           isExpanded ? "flex" : "hidden"
         )}
       >
-        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3 cursor-pointer">
-          <Icons.home />
-          <div>Home</div>
-        </div>
-        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3 cursor-pointer">
-          <Icons.pie />
-          <div>Dashboards</div>
-        </div>
-        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3 cursor-pointer">
-          <Icons.chart />
-          <div>Reports</div>
-        </div>
-        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3 cursor-pointer">
-          <Icons.billing />
-          <div>Billing</div>
-        </div>
-        <div className="hover:ml-4 w-full text-white hover:text-purple-500 dark:hover:text-white bg-background-primary-dark p-2 pl-8 rounded-full transform ease-in-out duration-300 flex flex-row items-center space-x-3 cursor-pointer">
-          <Icons.settings />
-          <div>Settings</div>
-        </div>
+        <NavButton
+          isExpanded={isExpanded}
+          title="Home"
+          targetView="home"
+          setView={setView}
+          Icon={Icons.home}
+          view={view}
+        />
+       
+        <NavButton
+          isExpanded={isExpanded}
+          title="Dashboards"
+          targetView="dashboards"
+          setView={setView}
+          Icon={Icons.pie}
+          view = {view}
+        />
+        <NavButton
+          isExpanded={isExpanded}
+          title="Reports"
+          targetView="reports"
+          setView={setView}
+          Icon={Icons.chart}
+          view={view}
+        />
+        <NavButton
+          isExpanded={isExpanded}
+          title="Billing"
+          targetView="billing"
+          setView={setView}
+          Icon={Icons.billing}
+          view={view}
+        />
+        <NavButton
+          isExpanded={isExpanded}
+          title="Settings"
+          targetView="settings"
+          setView={setView}
+          Icon={Icons.settings}
+          view={view}
+        />
       </div>
       <div
         className={cn(
@@ -185,11 +226,45 @@ const Sidebar: FC<Props> = ({ isExpanded, toggleSideBar, setView }) => {
         )}
       >
         <NavButton
-          isExpanded
+          isExpanded={isExpanded}
           title="Home"
-          view="home"
+          targetView="home"
           setView={setView}
           Icon={Icons.home}
+          view={view}
+        />
+       
+        <NavButton
+          isExpanded={isExpanded}
+          title="Dashboards"
+          targetView="dashboards"
+          setView={setView}
+          Icon={Icons.pie}
+          view = {view}
+        />
+        <NavButton
+          isExpanded={isExpanded}
+          title="Reports"
+          targetView="reports"
+          setView={setView}
+          Icon={Icons.chart}
+          view={view}
+        />
+        <NavButton
+          isExpanded={isExpanded}
+          title="Billing"
+          targetView="billing"
+          setView={setView}
+          Icon={Icons.billing}
+          view={view}
+        />
+        <NavButton
+          isExpanded={isExpanded}
+          title="Settings"
+          targetView="settings"
+          setView={setView}
+          Icon={Icons.settings}
+          view={view}
         />
       </div>
     </aside>
