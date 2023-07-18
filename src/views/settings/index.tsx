@@ -1,25 +1,28 @@
 import { Separator } from "components/ui/sperator";
 import { useState, useMemo } from "react";
-import { SidebarNav } from "components/sidebars/settings.sidebar";
+import { SidebarNav } from "components/sidebars/sub.sidebar";
 import { IViewComponent } from "lib/types/view.types";
 import ViewFactory from "lib/factory/view.factory";
 
-const sidebarNavItems = [
+const sidebarNavs = [
     {
-        title: "Profile",
-        href: "/examples/forms",
+        nav_id: "subsidebar_settings_nav_0",
+        nav_title: "Profile",
+        nav_view: "profile"
     },
     {
-        title: "Organization",
-        href: "/examples/forms/account",
+        nav_id: "subsidebar_settings_nav_1",
+        nav_title: "Organization",
+        nav_view: "organization"
     }
 ]
 const Settings:IViewComponent = ({  }) => {
 
-    const [view, setView] = useState("organization");
+    const [view, setView] = useState("profile");
 
 
     const View = useMemo(() =>  ViewFactory.createView(view).getView(),[view]);
+
     return (
         <>
 
@@ -32,10 +35,14 @@ const Settings:IViewComponent = ({  }) => {
                 </div>
                 <Separator className="my-6 dark:bg-gray-700" />
                 <div className="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
-                    <aside className="-mx-4 lg:w-1/5">
-                        <SidebarNav items={sidebarNavItems} />
+                    <aside className="-mx-4 lg:w-1/6">
+                        <SidebarNav  
+                            navs={sidebarNavs} 
+                            setView={setView}
+                            view={view}
+                        />
                     </aside>
-                    <div className="flex-1 lg:w-3/5">
+                    <div className="flex-1 lg:w-5/6">
                        <View
                             setView={setView}
                             view={view}

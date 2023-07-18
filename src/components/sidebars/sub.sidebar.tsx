@@ -41,9 +41,9 @@ export function SidebarNav({
           className={cn(
             buttonVariants({ variant: "ghost" }),
             view === nav.nav_view
-              ? "bg-muted hover:bg-muted"
-              : "hover:bg-transparent hover:underline",
-            "justify-start"
+              ? "bg-muted text-primary"
+              : "hover:bg-transparent ",
+            "justify-start cursor-pointer dark:hover:bg-gray-800"
           )}
         >
           {nav.nav_title}

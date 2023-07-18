@@ -47,6 +47,13 @@ class Organization extends View {
     }
 }
 
+class Dashboards extends View {
+    constructor() {
+        super();
+        this.view = OrganizationView;
+    }
+}
+
 class ViewFactory {
     static createView(view: string): View {
         switch (view) {
