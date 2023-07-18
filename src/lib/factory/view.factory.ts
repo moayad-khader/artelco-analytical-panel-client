@@ -2,6 +2,7 @@ import HomeView from "views/home";
 import SettingsView from "views/settings";
 import ProfileView from "views/settings/subViews/profile";
 import OrganizationView from "views/settings/subViews/organization";
+import DashboardsView from "views/dashboards";
 import { IViewComponent } from "lib/types/view.types";
 
 
@@ -50,7 +51,7 @@ class Organization extends View {
 class Dashboards extends View {
     constructor() {
         super();
-        this.view = OrganizationView;
+        this.view = DashboardsView;
     }
 }
 
@@ -65,6 +66,8 @@ class ViewFactory {
                 return new Profile();
             case "organization":
                 return new Organization();
+            case "dashboards":
+                return new Dashboards();
         }
     }
 }
