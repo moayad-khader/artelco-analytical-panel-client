@@ -5,17 +5,27 @@ import { usePathname } from "next/navigation"
 
 import { cn } from "lib/utils"
 import { buttonVariants } from "components/ui/button"
+import { useCallback } from "react"
 
-interface SidebarNavProps extends React.HTMLAttributes<HTMLElement> {
-  items: {
-    href: string
-    title: string
-  }[]
+interface Props extends React.HTMLAttributes<HTMLElement> {
+  setView: (a:string) => void;
+  view: string;
+  navs: {
+    nav_id: string,
+    nav_view: string
+    nav_title: string
+  }[];
 }
 
-export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
-  const pathname = usePathname()
+export function SidebarNav({ 
+  view,
+  setView,
+  className, 
+  navs, 
+  ...props 
+}: Props) {
 
+  const switchViewHandler = useCallback(setView,[setView]);
   return (
     <nav
       className={cn(
@@ -24,20 +34,20 @@ export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
       )}
       {...props}
     >
-      {items.map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
+      {navs.map((nav) => (
+        <span
+          key={nav.nav_id}
+          onClick={() => switchViewHandler(nav.nav_view)}
           className={cn(
             buttonVariants({ variant: "ghost" }),
-            pathname === item.href
+            view === nav.nav_view
               ? "bg-muted hover:bg-muted"
               : "hover:bg-transparent hover:underline",
             "justify-start"
           )}
         >
-          {item.title}
-        </Link>
+          {nav.nav_title}
+        </span>
       ))}
     </nav>
   )
