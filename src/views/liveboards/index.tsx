@@ -6,7 +6,7 @@ import { IViewComponent } from "lib/types/view.types";
 import { Icons } from "components/icons";
 import ViewFactory from "lib/factory/view.factory";
 
-const Dashboards: IViewComponent = ({
+const Liveboards: IViewComponent = ({
 
 }) => {
 
@@ -44,4 +44,4 @@ const Dashboards: IViewComponent = ({
 }
 
 
-export default Dashboards;
+export default Liveboards;
