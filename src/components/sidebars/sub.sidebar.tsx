@@ -17,7 +17,7 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
   }[];
 }
 
-export function SidebarNav({ 
+export function SubSideBar({ 
   view,
   setView,
   className, 

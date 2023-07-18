@@ -1,28 +1,43 @@
-import { Fragment } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { Button } from "components/ui/button";
+import { Separator } from "components/ui/sperator";
+import { SubSideBar } from "components/sidebars/sub.sidebar";
 import { IViewComponent } from "lib/types/view.types";
 import { Icons } from "components/icons";
+import ViewFactory from "lib/factory/view.factory";
 
 const Dashboards: IViewComponent = ({
 
 }) => {
 
+    const [view, setView] = useState("billboards")
+    const View = useMemo(() =>  ViewFactory.createView(view).getView(),[view]);
+
     return (
         <Fragment>
-            <div className="p-5 flex flex-wrap justify-between items-center border-b ">
-                <div className=" flex flex-col gap-3">
-                    <h1 className="text-white text-2xl font-bold capitalize">
-                        Billboards
-                    </h1>
-                    <p className="capitalize">Start your journey here!</p>
+             <div className="hidden  p-5 md:block">
+                <div className="space-y-0.5">
+                    <h2 className="text-2xl font-bold tracking-tight">Settings</h2>
+                    <p className="text-muted-foreground">
+                        Manage your account settings.
+                    </p>
                 </div>
-                <Button variant="outline" className="rounded-none">
-                <Icons.addCircle/>
-                    Create Billboard
-                </Button>
-            </div>
-            <div className="w-full grid grid-cols-2 gap-2">
-                
+                <Separator className="my-6 dark:bg-gray-700" />
+                <div className="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
+                    <aside className="-mx-4 lg:w-1/6">
+                        <SubSideBar  
+                            navs={[]} 
+                            setView={setView}
+                            view={view}
+                        />
+                    </aside>
+                    <div className="flex-1 lg:w-5/6">
+                       <View
+                            setView={setView}
+                            view={view}
+                       />
+                    </div>
+                </div>
             </div>
         </Fragment>
     )

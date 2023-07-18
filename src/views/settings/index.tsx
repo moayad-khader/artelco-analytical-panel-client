@@ -1,6 +1,6 @@
 import { Separator } from "components/ui/sperator";
 import { useState, useMemo } from "react";
-import { SidebarNav } from "components/sidebars/sub.sidebar";
+import { SubSideBar } from "components/sidebars/sub.sidebar";
 import { IViewComponent } from "lib/types/view.types";
 import ViewFactory from "lib/factory/view.factory";
 
@@ -36,7 +36,7 @@ const Settings:IViewComponent = ({  }) => {
                 <Separator className="my-6 dark:bg-gray-700" />
                 <div className="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
                     <aside className="-mx-4 lg:w-1/6">
-                        <SidebarNav  
+                        <SubSideBar  
                             navs={sidebarNavs} 
                             setView={setView}
                             view={view}
