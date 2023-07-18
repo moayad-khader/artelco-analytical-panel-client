@@ -5,14 +5,14 @@ export const profileFormSchema = z.object({
     username: z
         .string()
         .min(2, {
-            message: messages.PROFILE_VALIDATION_USERNAME_MIN_EN,
+            message: messages.PROFILE_SCHEMA_VALIDATION_USERNAME_MIN_EN,
         })
         .max(30, {
-            message: messages.PROFILE_VALIDATION_USERNAME_MAX_EN,
+            message: messages.PROFILE_SCHEMA_VALIDATION_USERNAME_MAX_EN,
         }),
     avatar: z
         .string()
-        .url({ message: messages.PROFILE_VALIDATION_AVATAR_EN }).optional()
+        .url({ message: messages.PROFILE_SCHEMA_VALIDATION_AVATAR_EN }).optional()
 })
 
 export type ProfileFormValues = z.infer<typeof profileFormSchema>
