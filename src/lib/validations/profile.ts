@@ -1,17 +1,18 @@
-import * as z from "zod"
+import * as z from "zod";
+import messages from "lib/messages";
 
 export const profileFormSchema = z.object({
     username: z
         .string()
         .min(2, {
-            message: "Username must be at least 2 characters.",
+            message: messages.PROFILE_VALIDATION_USERNAME_MIN_EN,
         })
         .max(30, {
-            message: "Username must not be longer than 30 characters.",
+            message: messages.PROFILE_VALIDATION_USERNAME_MAX_EN,
         }),
     avatar: z
         .string()
-        .url({ message: "Please enter a valid URL." }).optional()
+        .url({ message: messages.PROFILE_VALIDATION_AVATAR_EN }).optional()
 })
 
 export type ProfileFormValues = z.infer<typeof profileFormSchema>
