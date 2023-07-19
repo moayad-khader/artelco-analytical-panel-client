@@ -26,7 +26,7 @@ import {
 } from "components/ui/select"
 import { Textarea } from "components/ui/textarea"
 // import { toast } from "components/ui/use-toast"
-import { ProfileFormValues, profileFormSchema } from "lib/validations/profile";
+import { ProfileFormValues, profileFormSchema } from "lib/schemas/profile.schema";
 
 
 const defaultValues: Partial<ProfileFormValues> = {

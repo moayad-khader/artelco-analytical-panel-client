@@ -17,7 +17,7 @@ import { Icons } from "components/icons"
 import { PasswordInput } from "components/passwordInput"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { authSchema } from "lib/validations/auth";
+import { authSchema } from "lib/schemas/auth.schema";
 
 type Inputs = z.infer<typeof authSchema>
 

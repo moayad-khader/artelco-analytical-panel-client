@@ -25,7 +25,7 @@ import {
     CommandItem,
     CommandList,
 } from "components/ui/command";
-import { ProfileFormValues, profileFormSchema } from "lib/validations/profile";
+import { ProfileFormValues, profileFormSchema } from "lib/schemas/profile.schema";
 import {
     Popover,
     PopoverContent,
