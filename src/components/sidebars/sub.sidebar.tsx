@@ -41,7 +41,7 @@ export function SubSideBar({
           className={cn(
             buttonVariants({ variant: "ghost" }),
             view === nav.nav_view
-              ? "bg-muted text-primary"
+              ? "bg-muted text-primary dark:bg-gray-900"
               : "hover:bg-transparent ",
             "justify-start cursor-pointer dark:hover:bg-gray-800"
           )}

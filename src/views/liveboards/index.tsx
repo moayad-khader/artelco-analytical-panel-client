@@ -6,6 +6,34 @@ import { IViewComponent } from "lib/types/view.types";
 import { Icons } from "components/icons";
 import ViewFactory from "lib/factory/view.factory";
 
+const sidebarNavs = [
+    {
+        nav_id: "subsidebar_liveboards_nav_0",
+        nav_title: "Billboards",
+        nav_view: "billboards"
+    },
+    {
+        nav_id: "subsidebar_liveboards_nav_1",
+        nav_title: "Charts",
+        nav_view: "charts"
+    },
+    {
+        nav_id: "subsidebar_liveboards_nav_2",
+        nav_title: "Formulas",
+        nav_view: "formulas"
+    },
+    {
+        nav_id: "subsidebar_liveboards_nav_3",
+        nav_title: "Collections",
+        nav_view: "collections"
+    },
+    {
+        nav_id: "subsidebar_liveboards_nav_4",
+        nav_title: "Presentations",
+        nav_view: "presentations"
+    }
+]
+
 const Liveboards: IViewComponent = ({
 
 }) => {
@@ -17,16 +45,16 @@ const Liveboards: IViewComponent = ({
         <Fragment>
              <div className="hidden  p-5 md:block">
                 <div className="space-y-0.5">
-                    <h2 className="text-2xl font-bold tracking-tight">Settings</h2>
+                    <h2 className="text-2xl font-bold tracking-tight">Liveboards</h2>
                     <p className="text-muted-foreground">
-                        Manage your account settings.
+                        Create an interactive liveboards.
                     </p>
                 </div>
                 <Separator className="my-6 dark:bg-gray-700" />
-                <div className="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
+                <div className="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0 w-full">
                     <aside className="-mx-4 lg:w-1/6">
                         <SubSideBar  
-                            navs={[]} 
+                            navs={sidebarNavs} 
                             setView={setView}
                             view={view}
                         />

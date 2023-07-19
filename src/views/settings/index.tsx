@@ -15,7 +15,8 @@ const sidebarNavs = [
         nav_title: "Organization",
         nav_view: "organization"
     }
-]
+];
+
 const Settings:IViewComponent = ({  }) => {
 
     const [view, setView] = useState("profile");

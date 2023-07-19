@@ -1,32 +1,24 @@
-import { Fragment } from "react";
 import { Button } from "components/ui/button";
-import { IViewComponent } from "lib/types/view.types";
-import { Icons } from "components/icons";
+import { Separator } from "components/ui/sperator";
 
-const Billboards: IViewComponent = ({
-
-}) => {
-
-    return (
-        <Fragment>
-            <div className="p-5 flex flex-wrap justify-between items-center border-b ">
-                <div className=" flex flex-col gap-3">
-                    <h1 className="text-white text-2xl font-bold capitalize">
-                        Billboards
-                    </h1>
-                    <p className="capitalize">Start your journey here!</p>
-                </div>
-                <Button variant="outline" className="rounded-none">
-                <Icons.addCircle/>
-                    Create Billboard
-                </Button>
-            </div>
-            <div className="w-full grid grid-cols-2 gap-2">
-                
-            </div>
-        </Fragment>
-    )
-}
-
+const Billboards = ({}) => {
+  return (
+    <div className="space-y-6 pr-64">
+      <div className="grid grid-cols-2">
+        <div>
+            <h3 className="text-lg font-medium">Billboards</h3>
+            <p className="text-sm text-muted-foreground">
+            This is how your teamates will see you on the panel.
+            </p>
+        </div>
+        <div className="flex justify-end items-end">
+            <Button>Create New Billboard</Button>
+        </div>
+      </div>
+      <Separator className="dark:bg-gray-700" />
+  
+    </div>
+  );
+};
 
 export default Billboards;
