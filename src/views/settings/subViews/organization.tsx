@@ -1,6 +1,6 @@
 import { OrgnaizationForm } from "components/forms/organization.form";
 import { IViewComponent } from "lib/types/view.types";
-import { Separator } from "components/ui/sperator";
+import { Separator } from "components/ui/separator";
 
 const Organization = ({}) => {
   return (

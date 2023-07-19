@@ -1,6 +1,6 @@
 import { Fragment, useMemo, useState } from "react";
 import { Button } from "components/ui/button";
-import { Separator } from "components/ui/sperator";
+import { Separator } from "components/ui/separator";
 import { SubSideBar } from "components/sidebars/sub.sidebar";
 import { IViewComponent } from "lib/types/view.types";
 import { Icons } from "components/icons";

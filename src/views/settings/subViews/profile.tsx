@@ -1,6 +1,6 @@
 import { ProfileForm } from "components/forms/profile.form";
 import { IViewComponent } from "lib/types/view.types";
-import { Separator } from "components/ui/sperator";
+import { Separator } from "components/ui/separator";
 
 const Profile = ({}) => {
   return (

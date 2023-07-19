@@ -1,5 +1,5 @@
 import { Button } from "components/ui/button";
-import { Separator } from "components/ui/sperator";
+import { Separator } from "components/ui/separator";
 
 const Billboards = ({}) => {
   return (

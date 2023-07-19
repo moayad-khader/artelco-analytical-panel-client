@@ -1,4 +1,4 @@
-import { Separator } from "components/ui/sperator";
+import { Separator } from "components/ui/separator";
 import { useState, useMemo } from "react";
 import { SubSideBar } from "components/sidebars/sub.sidebar";
 import { IViewComponent } from "lib/types/view.types";
