@@ -188,8 +188,8 @@ const Sidebar: FC<Props> = ({ isExpanded, toggleSideBar, setView, view }) => {
        
         <NavButton
           isExpanded={isExpanded}
-          title="Dashboards"
-          targetView="dashboards"
+          title="Liveboards"
+          targetView="liveboards"
           setView={setView}
           Icon={Icons.pie}
           view = {view}
@@ -236,8 +236,8 @@ const Sidebar: FC<Props> = ({ isExpanded, toggleSideBar, setView, view }) => {
        
         <NavButton
           isExpanded={isExpanded}
-          title="Dashboards"
-          targetView="dashboards"
+          title="Liveboards"
+          targetView="liveboards"
           setView={setView}
           Icon={Icons.pie}
           view = {view}

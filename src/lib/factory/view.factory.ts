@@ -3,6 +3,7 @@ import SettingsView from "views/settings";
 import ProfileView from "views/settings/subViews/profile";
 import OrganizationView from "views/settings/subViews/organization";
 import LiveboardsView from "views/liveboards";
+import BillBoardsView from "views/liveboards/subViews/billboards.view";
 import { IViewComponent } from "lib/types/view.types";
 
 
@@ -55,6 +56,13 @@ class Liveboards extends View {
     }
 }
 
+class Billboards extends View {
+    constructor() {
+        super();
+        this.view = BillBoardsView;
+    }
+}
+
 class ViewFactory {
     static createView(view: string): View {
         switch (view) {
@@ -68,6 +76,8 @@ class ViewFactory {
                 return new Organization();
             case "liveboards":
                 return new Liveboards();
+            case "billboards":
+                return new Billboards();
         }
     }
 }
