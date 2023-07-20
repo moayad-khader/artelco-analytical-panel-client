@@ -1,6 +1,8 @@
 import {
     AlarmClock,
     AlertTriangle,
+    ArrowDown01Icon,
+    ArrowUp01Icon,
     BarChart3,
     CalendarDays,
     Check,
@@ -14,6 +16,7 @@ import {
     Circle,
     CreditCard,
     Crop,
+    CrossIcon,
     DollarSign,
     Download,
     Edit,
@@ -33,6 +36,7 @@ import {
     Moon,
     MoreHorizontal,
     MoreVertical,
+    
     Package,
     Plus,
     PlusCircle,
@@ -56,6 +60,9 @@ import {
     X,
     HomeIcon,
     Users,
+    ChevronLast,
+    ChevronFirst,
+    PhoneCall,
     type Icon as LucideIcon,
     type LucideProps,
   } from "lucide-react"
@@ -120,6 +127,12 @@ import {
     clothing: Shirt,
     shoes: Footprints,
     accessories: HardHat,
+    arrowDown: ArrowDown01Icon,
+    arrowUp: ArrowUp01Icon,
+    chevronLast: ChevronLast,
+    chevronFirst: ChevronFirst,
+    cross: CrossIcon,
+    phoneCall: PhoneCall,
     logo: (props: LucideProps) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"

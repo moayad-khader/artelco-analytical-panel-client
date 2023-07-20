@@ -13,7 +13,7 @@ import { Console } from "console";
 
 
 export default function Dashboard() {
-    console.log("ssss")
+
     return (
         <div className="w-full h-max-screen h-min-screen h-screen dark:bg-background-primary-dark bg-white grid grid-rows-1 grid-cols-12 grid-flow-col gap-1 p-2">
             <div className="col-span-7  grid grid-rows-2 gap-2">

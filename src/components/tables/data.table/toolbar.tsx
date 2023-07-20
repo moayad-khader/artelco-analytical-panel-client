@@ -1,6 +1,7 @@
 "use client"
 
-import { Cross2Icon } from "@radix-ui/react-icons"
+
+import { Icons } from "components/icons";
 import { Table } from "@tanstack/react-table"
 
 import { Button } from "components/ui/button"
@@ -10,13 +11,13 @@ import { DataTableViewOptions } from "components/tables/data.table/viewOptions";
 
 import { DataTableFacetedFilter } from "components/tables/data.table/facetedFilter";
 
-interface DataTableToolbarProps<TData> {
-  table: Table<TData>
+interface DataTableToolbarProps<T> {
+  table: Table<T>
 }
 
-export function DataTableToolbar<TData>({
+export function DataTableToolbar<T>({
   table,
-}: DataTableToolbarProps<TData>) {
+}: DataTableToolbarProps<T>) {
   const isFiltered = table.getState().columnFilters.length > 0
 
   return (
@@ -51,7 +52,7 @@ export function DataTableToolbar<TData>({
             className="h-8 px-2 lg:px-3"
           >
             Reset
-            <Cross2Icon className="ml-2 h-4 w-4" />
+            <Icons.cross className="ml-2 h-4 w-4" />
           </Button>
         )}
       </div>

@@ -28,15 +28,15 @@ import {
 import { DataTablePagination } from "components/tables/data.table/pagination";
 import { DataTableToolbar } from "components/tables/data.table/toolbar";
 
-interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[]
-  data: TData[]
+interface DataTableProps<T, TValue> {
+  columns: ColumnDef<T, TValue>[]
+  data: T[]
 }
 
-export function DataTable<TData, TValue>({
+export function DataTable<T, TValue>({
   columns,
   data,
-}: DataTableProps<TData, TValue>) {
+}: DataTableProps<T, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({})
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({})

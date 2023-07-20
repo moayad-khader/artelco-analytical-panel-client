@@ -1,8 +1,7 @@
 "use client"
 
-import { DotsHorizontalIcon } from "@radix-ui/react-icons"
 import { Row } from "@tanstack/react-table"
-
+import { Icons } from "components/icons";
 import { Button } from "components/ui/button";
 import {
   DropdownMenu,
@@ -18,17 +17,16 @@ import {
   DropdownMenuTrigger,
 } from "components/ui/dropdownMenu"
 
-import { labels } from "../data/data"
-import { taskSchema } from "../data/schema"
 
-interface DataTableRowActionsProps<TData> {
-  row: Row<TData>
+
+interface DataTableRowActionsProps<T> {
+  row: Row<T>
 }
 
-export function DataTableRowActions<TData>({
+export function DataTableRowActions<T>({
   row,
-}: DataTableRowActionsProps<TData>) {
-  const task = taskSchema.parse(row.original)
+}: DataTableRowActionsProps<T>) {
+
 
   return (
     <DropdownMenu>
@@ -37,27 +35,13 @@ export function DataTableRowActions<TData>({
           variant="ghost"
           className="flex h-8 w-8 p-0 data-[state=open]:bg-muted"
         >
-          <DotsHorizontalIcon className="h-4 w-4" />
+          <Icons.horizontalThreeDots className="h-4 w-4" />
           <span className="sr-only">Open menu</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
         <DropdownMenuItem>Edit</DropdownMenuItem>
-        <DropdownMenuItem>Make a copy</DropdownMenuItem>
-        <DropdownMenuItem>Favorite</DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuSub>
-          <DropdownMenuSubTrigger>Labels</DropdownMenuSubTrigger>
-          <DropdownMenuSubContent>
-            <DropdownMenuRadioGroup value={task.label}>
-              {labels.map((label) => (
-                <DropdownMenuRadioItem key={label.value} value={label.value}>
-                  {label.label}
-                </DropdownMenuRadioItem>
-              ))}
-            </DropdownMenuRadioGroup>
-          </DropdownMenuSubContent>
-        </DropdownMenuSub>
+        <DropdownMenuItem>Duplicate</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           Delete
