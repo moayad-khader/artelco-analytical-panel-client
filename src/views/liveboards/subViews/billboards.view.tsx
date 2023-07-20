@@ -2,7 +2,7 @@ import { Button } from "components/ui/button";
 import { Separator } from "components/ui/separator";
 import { Icons } from "components/icons";
 import { DataTable } from "components/tables/data.table";
-import { columns } from "views/liveboards/subViews/billboards.view/columns";
+import { columns } from "components/columns/billboards.column";
 import billboardsMockData from "_mock/billboards";
 
 const Billboards = ({}) => {
