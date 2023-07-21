@@ -1,4 +1,4 @@
-import { Button } from "components/ui/button"
+import { Button } from "components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -7,40 +7,45 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "components/ui/dialog"
-import { FC } from "react"
-import { Input } from "components/ui/input"
-import { Label } from "components/ui/label"
+} from "components/ui/dialog";
+import { FC } from "react";
+import { Icons } from "components/icons";
+import { cn } from "lib/utils";
 
-interface Props{
-  title: string,
-  desciption: string,
-  buttonText: string,
-  children: any
+interface Props {
+  title: string;
+  desciption?: string;
+  buttonText: string;
+  children: any;
+  className?: string;
 }
 
 const CreationDialog: FC<Props> = ({
   children,
   buttonText,
   title,
-  desciption
-})  => {
+  desciption,
+  className,
+}) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">{buttonText}</Button>
+        <Button>
+          <Icons.addCircle />
+          <span className="ml-2">{buttonText}</span>
+        </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent
+        className={cn("sm:max-w-[425px]", className ? className : "")}
+      >
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
-          <DialogDescription>
-            {desciption}
-          </DialogDescription>
+          <DialogDescription>{desciption}</DialogDescription>
         </DialogHeader>
-       {children}
+        {children}
       </DialogContent>
     </Dialog>
-  )
-}
+  );
+};
 
 export default CreationDialog;

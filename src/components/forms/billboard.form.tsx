@@ -30,7 +30,7 @@ const defaultValues: Partial<ProfileFormValues> = {
 
 }
 
-export function ProfileForm() {
+export function BillboardForm() {
   const form = useForm<ProfileFormValues>({
     resolver: zodResolver(profileFormSchema),
     defaultValues,
