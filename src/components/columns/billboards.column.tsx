@@ -71,6 +71,20 @@ export const columns: ColumnDef<Billboard>[] = [
     },
   },
   {
+    accessorKey: "metric_type",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Metric Type" />
+    ),
+    cell: ({ row }) => {
+      return (
+        <div className="flex items-center">{row.getValue("metric_type")}</div>
+      );
+    },
+    filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id));
+    },
+  },
+  {
     id: "actions",
     cell: ({ row }) => <DataTableRowActions row={row} />,
   },

@@ -19,16 +19,21 @@ const sidebarNavs = [
     },
     {
         nav_id: "subsidebar_liveboards_nav_2",
+        nav_title: "Tables",
+        nav_view: "tables"
+    },
+    {
+        nav_id: "subsidebar_liveboards_nav_3",
         nav_title: "Formulas",
         nav_view: "formulas"
     },
     {
-        nav_id: "subsidebar_liveboards_nav_3",
+        nav_id: "subsidebar_liveboards_nav_4",
         nav_title: "Collections",
         nav_view: "collections"
     },
     {
-        nav_id: "subsidebar_liveboards_nav_4",
+        nav_id: "subsidebar_liveboards_nav_5",
         nav_title: "Presentations",
         nav_view: "presentations"
     }
