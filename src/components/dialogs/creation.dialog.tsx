@@ -11,6 +11,7 @@ import {
 import { FC } from "react";
 import { Icons } from "components/icons";
 import { cn } from "lib/utils";
+import { Separator } from "components/ui/separator";
 
 interface Props {
   title: string;
@@ -42,6 +43,7 @@ const CreationDialog: FC<Props> = ({
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{desciption}</DialogDescription>
         </DialogHeader>
+        <Separator/>
         {children}
       </DialogContent>
     </Dialog>

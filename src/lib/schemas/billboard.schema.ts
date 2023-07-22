@@ -3,7 +3,8 @@ import { z } from "zod"
 
 export const billboardSchema = z.object({
   id: z.number(),
-  billboard_title: z.string(),
+  billboard_title_en: z.string(),
+  billboard_title_ar: z.string(),
   billboard_icon: z.string(),
   db_id: z.number(),
   table_id: z.number(),
@@ -11,8 +12,9 @@ export const billboardSchema = z.object({
   table_name: z.string(),
   metric_type: z.enum(['formula' , 'field']),
   metric_field: z.string().optional(),
-  metric_formula: z.number().optional()
+  metric_formula: z.number().optional(),
+  formula_id: z.number().optional()
 });
 
 
-export type Billboard = z.infer<typeof billboardSchema>
+export type BillboardFormValues = z.infer<typeof billboardSchema>

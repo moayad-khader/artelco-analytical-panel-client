@@ -5,12 +5,12 @@ import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "components/ui/badge";
 import { Checkbox } from "components/ui/checkbox";
 
-import { Billboard } from "lib/schemas/billboard.schema";
+import { BillboardFormValues } from "lib/schemas/billboard.schema";
 import { DataTableColumnHeader } from "components/tables/data.table/columnHeader";
 import { DataTableRowActions } from "components/tables/data.table/rowActions";
 import { Icons } from "components/icons";
 
-export const columns: ColumnDef<Billboard>[] = [
+export const columns: ColumnDef<BillboardFormValues>[] = [
   {
     accessorKey: "billboard_title",
     header: ({ column }) => (

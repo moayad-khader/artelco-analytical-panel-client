@@ -24,8 +24,7 @@ const Billboards = ({}) => {
             className="sm:max-w-5xl"
           >
             <BillboardForm/>
-          </CreationDialog>
-            
+          </CreationDialog> 
         </div>
       </div>
       <Separator className="dark:bg-gray-700" />
