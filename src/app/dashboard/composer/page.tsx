@@ -28,7 +28,7 @@ export default function Dashboard() {
                     layout={layout}
                     cols={3}
                     rowHeight={30}
-                    width={window.innerWidth - sidebar.current?.innerWidth}
+                    width={1200}
                 >
                     <div key="a">a</div>
                     <div key="b">b</div>
