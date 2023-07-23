@@ -13,7 +13,10 @@ export const billboardSchema = z.object({
   metric_type: z.enum(['formula' , 'field']),
   metric_field: z.string().optional(),
   metric_formula: z.number().optional(),
-  formula_id: z.number().optional()
+  formula_id: z.number().optional(),
+  billboard_type: z.enum(["standard", "standard"]),
+  billboard_threshold_warning: z.number().optional(),
+  billboard_threshold_danger: z.number().optional()
 });
 
 
