@@ -26,14 +26,14 @@ const Main: FC<Props> = ({
 
     return (
 
-        <section className="relative h-full dark:bg-[#424242] ">
+        <section className="relative h-full dark:background-secondary-dark ">
 
-            <div className="relative mx-auto  min-h-full h-full overflow-auto max-h-full border-2 dark:border-gray-800 dark:bg-[#424242] ">
-                <div className="relative overflow-hidden rounded-md h-full  dark:bg-[#424242]">
+            <div className="relative mx-auto  min-h-full h-full overflow-auto max-h-full   dark:bg-background-secondary-dark ">
+                <div className="relative overflow-hidden rounded-lg h-full  dark:bg-background-secondary-dark">
 
-                    <div className="overflow-x-auto h-full dark:bg-[#424242]">
-                        <table className="w-full text-sm text-left text-gray-500  h-full  border-2 dark:border-gray-800 p-0 ">
-                            <thead className="text-xs text-gray-700 bg-gray-200 uppercase bg-gray-50 shadow-4xl border-b-2 border-[#1f77b4] dark:bg-[#424242] dark:text-white">
+                    <div className="overflow-x-auto h-full dark:bg-background-secondary-dark">
+                        <table className="w-full text-sm text-left text-gray-500  h-full  border-2 dark:border-dark border-light p-0 ">
+                            <thead className="text-xs text-gray-700 uppercase  shadow-4xl border-b-2 border-primary dark:bg-background-secondary-dark background-secondary-light dark:text-white">
                                 <tr>
                                     {
                                         tableHead.map((col, index) =>
@@ -45,13 +45,13 @@ const Main: FC<Props> = ({
 
                                 </tr>
                             </thead>
-                            <tbody className="bg-gray-100 dark:bg-[#424242] dark:text-white">
+                            <tbody className="bg-gray-100 dark:bg-background-secondary-dark dark:text-white bg-background-primary-light">
                                 {
                                     data.map((row, rowIndex) =>
                                         <tr key={table_id + "_row_" + rowIndex} className=" ">
                                             {
                                                 tableHead.map((cell, cellIndex) =>
-                                                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap text-center  dark:border-gray-800  border-b-2 dark:bg-[#424242] dark:text-white" key={table_id + "_cell_" + rowIndex + cellIndex}>{row[cell]}</td>
+                                                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap text-center  dark:border-dark border-light  border-b-2 dark:bg-background-secondary-dark dark:text-white" key={table_id + "_cell_" + rowIndex + cellIndex}>{row[cell]}</td>
 
                                                 )
                                             }

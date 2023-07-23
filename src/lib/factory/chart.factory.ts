@@ -1,4 +1,4 @@
-import { IChartComponent } from "types/chart.types";
+import { IChartComponent } from "lib/types/chart.types";
 import {
     BarChart as BarChartComponent,
     AreaChart as AreaChartComponent
@@ -9,9 +9,7 @@ class Chart {
 
     chart: IChartComponent;
 
-    constructor() {
-        console.log("ss")
-    }
+    constructor() {}
 
     getChart():IChartComponent{
         return this.chart;

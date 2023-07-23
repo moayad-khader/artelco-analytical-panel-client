@@ -17,7 +17,7 @@ import { Icons } from "components/icons"
 import { PasswordInput } from "components/passwordInput"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { authSchema } from "lib/validations/auth";
+import { authSchema } from "lib/schemas/auth.schema";
 
 type Inputs = z.infer<typeof authSchema>
 
@@ -73,7 +73,7 @@ export function SignInForm() {
             </FormItem>
           )}
         />
-        <Button disabled={isPending} className="bg-[#1f77b4] text-white hover:bg-[#1f77b0]">
+        <Button disabled={isPending} className="bg-primary text-white ">
           {isPending && (
             <Icons.spinner
               className="mr-2 h-4 w-4 animate-spin"

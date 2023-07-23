@@ -3,6 +3,30 @@ module.exports = {
   darkMode: ["class"],
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    backgroundColor: (theme) => ({
+      ...theme("colors"),
+      hover: "#009fc2",
+      primary: "#1f77b4",
+      secondary: "white",
+      sidebar: "#F0F0F0",
+      "background-primary-dark": "#1C1C21",
+      "background-secondary-dark": "#424242",
+      "background-third-dark": "#31363F",
+      "background-primary-light": "white",
+      "background-secondary-light": "#FAF9F6",
+      "background-third-light": "#fff",
+    }),
+    borderColor: (theme) => ({
+      ...theme("colors"),
+      primary: "#1f77b0",
+      dark: "#545353",
+      light: "#e5e0e0"
+    }),
+    textColor: (theme) => ({
+      ...theme("colors"),
+      primary: "#1f77b0",
+     
+    }),
     container: {
       center: true,
       padding: "2rem",
@@ -11,46 +35,7 @@ module.exports = {
       },
     },
     extend: {
-      colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
+   
       keyframes: {
         "accordion-down": {
           from: { height: 0 },

@@ -41,7 +41,7 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
                     </div>
                 </div>
             </AspectRatio>
-            <main className="container absolute top-1/2 col-span-1 flex -translate-y-1/2 items-center md:static md:top-0 md:col-span-2 md:flex md:translate-y-0 lg:col-span-1 bg-white dark:bg-[#424242] border-l-4">
+            <main className="container absolute top-1/2 col-span-1 flex -translate-y-1/2 items-center md:static md:top-0 md:col-span-2 md:flex md:translate-y-0 lg:col-span-1 bg-white dark:bg-black border-l-4 dark:border-0">
                 {children}
             </main>
         </div>
