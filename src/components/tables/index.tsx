@@ -26,7 +26,7 @@ const Main: FC<Props> = ({
 
     return (
 
-        <section className="relative h-full dark:background-secondary-dark ">
+        <section className="relative h-full dark:background-secondary-dark opacity-90 ">
 
             <div className="relative mx-auto  min-h-full h-full overflow-auto max-h-full   dark:bg-background-secondary-dark ">
                 <div className="relative overflow-hidden rounded-lg h-full  dark:bg-background-secondary-dark">

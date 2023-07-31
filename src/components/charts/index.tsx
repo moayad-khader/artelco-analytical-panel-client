@@ -2,7 +2,7 @@
 import { FC, useEffect, useMemo } from "react";
 import { cn } from "lib/utils";
 import { IChartComponent } from "lib/types/chart.types";
-import { ChartFactory } from "lib/factory";
+import ChartFactory  from "lib/factory/chart.factory";
 import { useTheme } from "next-themes";
 interface Props {
     chart_type: string;
@@ -30,7 +30,7 @@ const Chart: FC<Props> = ({
     return (
         <div
             className={cn(
-                " h-full p-2 border-2 dark:border-dark border-light pb-0 bg-accent dark:bg-background-secondary-dark rounded-xl  space-y-2 ",
+                " h-full p-2 border-2 dark:border-dark border-light pb-0 bg-accent dark:bg-background-secondary-dark rounded-xl opacity-90  space-y-2 ",
                 className
             )}
         >

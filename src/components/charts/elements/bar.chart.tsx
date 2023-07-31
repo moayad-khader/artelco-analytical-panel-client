@@ -9,7 +9,7 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 interface BarChartProps {
     details: any
 }
-const colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'];
+const colors = ['#E0E71A'];
 
 const BarChart: FC<BarChartProps> = ({ details }) => {
 
@@ -79,7 +79,7 @@ const BarChart: FC<BarChartProps> = ({ details }) => {
                     theme: "dark"
                 },
                 legend: {
-                    show: true,
+                    show: false,
                     position: 'bottom',
                 },
                 

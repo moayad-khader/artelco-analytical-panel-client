@@ -8,7 +8,7 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 interface Props {
     details: any
 }
-const colors = ['#1f77b4'];
+const colors = ['#E0E71A'];
 const AreaChart: FC<Props>  = ({ details }) => {
     const { xLabels, series } = useMemo(() => {
         return apexchartsDataFormConverter(details, "skillset")
@@ -65,6 +65,7 @@ const AreaChart: FC<Props>  = ({ details }) => {
       style={{
           width: "100%", // width set to 100%
           maxWidth: "100%", // ensure that the maximum width is also 100%
+          opacity: 50
         }}
     />
   );

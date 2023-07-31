@@ -6,7 +6,8 @@ module.exports = {
     backgroundColor: (theme) => ({
       ...theme("colors"),
       hover: "#009fc2",
-      primary: "#1f77b4",
+      primary: "#333E48",
+      umniah: "#E0E71A",
       secondary: "white",
       sidebar: "#F0F0F0",
       "background-primary-dark": "#1C1C21",
@@ -18,14 +19,15 @@ module.exports = {
     }),
     borderColor: (theme) => ({
       ...theme("colors"),
-      primary: "#1f77b0",
+      primary: "#E0E71A",
       dark: "#545353",
-      light: "#e5e0e0"
+      light: "#e5e0e0",
+      umniah: "#E0E71A",
     }),
     textColor: (theme) => ({
       ...theme("colors"),
-      primary: "#1f77b0",
-     
+      primary: "#E0E71A",
+      umniah: "#E0E71A",
     }),
     container: {
       center: true,
