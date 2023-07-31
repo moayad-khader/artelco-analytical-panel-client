@@ -16,14 +16,14 @@ const Main: FC<Props> = ({
 }) => {
 
     return (
-        <section className="relative h-full dark:background-secondary-dark opacity-90">
+        <section className="relative h-full dark:background-secondary-dark bg-white opacity-90">
 
             <div className="relative mx-auto  min-h-full h-full overflow-auto max-h-full   dark:bg-background-secondary-dark ">
                 <div className="relative overflow-hidden rounded-lg h-full  dark:bg-background-secondary-dark">
 
                     <div className="overflow-x-auto h-full dark:bg-background-secondary-dark">
                         <table className="w-full text-sm text-left text-gray-500  h-full  border-2 dark:border-dark border-light p-0 ">
-                            <thead className="text-xs text-gray-700 uppercase  shadow-4xl border-b-2 border-primary dark:bg-background-secondary-dark bg-primary text-white">
+                            <thead className="text-xs text-gray-700 uppercase  shadow-4xl border-b-2 border-primary dark:bg-background-secondary-dark background-secondary-light dark:text-white">
 
                                 <tr>
                                     <th scope="col" className="px-4 py-3 text-center ">

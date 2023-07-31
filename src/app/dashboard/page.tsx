@@ -1,3 +1,4 @@
+"use client"
 import type { NextPage } from "next";
 import "app/globals.css";
 import { Clock, PhoneCall } from "lucide-react";
@@ -8,14 +9,15 @@ import Chart from "components/charts";
 import skillset from "_mock/skillset";
 import agents from "_mock/agent";
 import bar1 from "_mock/bar1";
-import { Console } from "console";
+import { useTheme } from "next-themes";
 
 
 
 export default function Dashboard() {
-
+    const { setTheme,  theme} = useTheme()
+    console.log("theme", theme)
     return (
-        <div style={{background: "url(https://imgy.pro/jordannews/993x560/920223191239257780655.jpg)", backgroundPosition:"center", backgroundSize: "cover", backgroundRepeat: "no-repeat"}} className="w-full h-max-screen h-min-screen h-screen dark:bg-background-primary-dark bg-white grid grid-rows-1 grid-cols-12 grid-flow-col gap-4 p-2">
+        <div style={{background: "url(/images/359897534_3386052905039620_5714924029559942965_n.png)", backgroundPosition:"center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }} className="w-full h-max-screen h-min-screen h-screen  grid grid-rows-1 grid-cols-12 grid-flow-col gap-4 p-2 bg-black">
             <div className="col-span-7  grid grid-rows-2 gap-2">
                 <div className="h-full w-full ">
                     <MainTable

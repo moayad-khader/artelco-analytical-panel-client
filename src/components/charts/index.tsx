@@ -30,7 +30,7 @@ const Chart: FC<Props> = ({
     return (
         <div
             className={cn(
-                " h-full p-2 border-2 dark:border-dark border-light pb-0 bg-accent dark:bg-background-secondary-dark rounded-xl opacity-90  space-y-2 ",
+                " h-full p-2 border-2 dark:border-dark border-light pb-0 bg-white dark:bg-background-secondary-dark rounded-xl opacity-90  space-y-2 ",
                 className
             )}
         >
